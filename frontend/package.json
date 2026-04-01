@@ -1,0 +1,5 @@
+{
+  "name": "vibha-frontend",
+  "version": "1.0.0",
+  "scripts": { "start": "echo React app placeholder" }
+}
