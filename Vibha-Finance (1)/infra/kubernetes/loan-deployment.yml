@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loan-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loan
+  template:
+    metadata:
+      labels:
+        app: loan
+    spec:
+      containers:
+      - name: loan
+        image: vibha/loan:latest
+        ports:
+        - containerPort: 8080

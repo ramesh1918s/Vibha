@@ -1,0 +1,34 @@
+# Create a clean 3-tier AWS architecture diagram image
+
+from PIL import Image, ImageDraw
+
+img = Image.new('RGB', (1200, 800), 'white')
+draw = ImageDraw.Draw(img)
+
+def box(x, y, w, h, text):
+    draw.rectangle([x, y, x+w, y+h], outline='black', width=2)
+    draw.text((x+10, y+h//3), text, fill='black')
+
+# Title
+draw.text((400, 20), "3-Tier AWS Architecture - Vibha Finance", fill='black')
+
+# Internet layer
+box(450, 80, 300, 80, "Users / Internet")
+
+# Load Balancer
+box(450, 200, 300, 80, "AWS ALB (Load Balancer)")
+
+# Presentation Layer
+box(150, 350, 300, 100, "Frontend EC2\n(t2.micro)\nPublic Subnet")
+
+# Application Layer
+box(450, 350, 300, 100, "Backend EC2\n(t2.medium)\nPrivate Subnet")
+
+# Database Layer
+box(750, 350, 300, 100, "RDS PostgreSQL\nPrivate Subnet")
+
+# Save image
+path = "/mnt/data/3-tier-aws-architecture.png"
+img.save(path)
+
+path
