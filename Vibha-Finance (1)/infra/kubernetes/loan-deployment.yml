@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: loan
-        image: vibha/loan:latest
+        image: shivaram1918/vibha-loan:v3
         ports:
         - containerPort: 8080

@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: payment
-        image: vibha/payment:latest
+        image: shivaram1918/vibha-payment:v1
         ports:
         - containerPort: 8080
