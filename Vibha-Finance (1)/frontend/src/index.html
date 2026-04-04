@@ -1,1 +1,60 @@
-<html><body><h1>Vibha Finance</h1></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vibha Finance Pvt Ltd</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>🏦 Vibha Finance Pvt Ltd</h1>
+<div class="container">
+    <button onclick="callAPI('/user')">User Service</button>
+    <button onclick="callAPI('/payment')">Payment Service</button>
+    <button onclick="callAPI('/loan')">Loan Service</button>
+    <button onclick="callAPI('/notify')">Notification</button>
+    <button onclick="callAPI('/audit')">Audit</button>
+    <button onclick="callAPI('/auth')">Auth</button>
+    <div id="output"></div>
+</div>
+<script>
+    function callAPI(endpoint) {
+        fetch(endpoint)
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("output").innerHTML = data;
+        })
+        .catch(err => {
+            document.getElementById("output").innerHTML = "Error connecting service ❌";
+        });
+    }
+</script>
+</body>
+</html> same changes real finance backing appliction ela unnadli logo and ui heavy level gaa script prepare cheyi
